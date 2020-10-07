@@ -17,7 +17,6 @@ import com.example.restservice.model.Response;
 import com.example.restservice.services.GreetingService;
 
 @RestController
-
 public class GreetingController implements IGreetingController {
 	
 	@Autowired
