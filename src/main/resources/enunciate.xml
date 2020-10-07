@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<enunciate label="novaglobalapi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://enunciate.codehaus.org/schemas/enunciate-1.25.xsd">
+
+  <version>${project.version}</version>
+    <name>${project.name}</name>
+
+    <api-classes>
+        <include pattern="com.example.restservice.controllers.*"/>
+    </api-classes>
+
+    <modules>
+        <docs disableResourceLinks="true" docsDir="restapi" title="REST API"/>
+        
+         <jackson disabled="false"/>
+        <gwt-json-overlay disabled="true"/>
+        <c disabled="true"/>
+        <obj-c disabled="true"/>
+        <csharp disabled="true"/>
+        <jaxws-client disabled="true"/>
+        <amf disabled="true"/>
+        <java-json-client disabled="true"/>
+        <javascript-client disabled="true"/>
+        <php-json-client disabled="true"/>
+        <ruby-json-client disabled="true"/>
+        <swagger disabled="false"/>	
+        
+    </modules>
+</enunciate>
