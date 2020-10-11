@@ -2,15 +2,15 @@ package com.example.restservice.model;
 
 public class Greeting {
 
-	private final long id;
+	private final Long id;
 	private String content;
 
-	public Greeting(long id, String content) {
+	public Greeting(Long id, String content) {
 		this.id = id;
 		this.content = content;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 

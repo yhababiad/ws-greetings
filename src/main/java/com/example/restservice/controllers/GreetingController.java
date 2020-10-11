@@ -29,22 +29,22 @@ public class GreetingController implements IGreetingController {
 	}
 
 	@Override
-	public Greeting getGreeting( long id) throws Exception{
+	public Greeting getGreeting( Long id) throws Exception{
 		return service.getGreeting(id);
 	}
 	
 	@Override
-	public Greeting createGreeting( long id,  String content) throws Exception{
+	public Greeting createGreeting( Long id,  String content) throws Exception{
 		return service.createGreeting(id, content);
 	}
 	
 	@Override
-	public Greeting updqteGreeting( long id, String content) throws Exception{
-		return service.updqteGreeting(id, content);
+	public Greeting updateGreeting( Long id, String content) throws Exception{
+		return service.updateGreeting(id, content);
 	}
 	
 	@Override
-	public Response deleteGreeting( long id) throws Exception {
+	public Response deleteGreeting( Long id) throws Exception {
 		return service.deleteGreeting(id);
 	}
 	

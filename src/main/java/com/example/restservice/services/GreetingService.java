@@ -17,7 +17,7 @@ public class GreetingService {
 		return data;
 	}
 
-	public Greeting getGreeting(long id) throws Exception{
+	public Greeting getGreeting(Long id) throws Exception{
 		for(Greeting g : data) {
 			if (g.getId() == id)
 				return g;
@@ -25,7 +25,7 @@ public class GreetingService {
 		throw new Exception("Invalid Greeting id");
 	}
 	
-	public Greeting createGreeting(long id, String content) throws Exception{
+	public Greeting createGreeting(Long id, String content) throws Exception{
 		for(Greeting g : data) {
 			if (g.getId() == id)
 				throw new Exception("Invalid Greeting id, already exists");
@@ -35,20 +35,22 @@ public class GreetingService {
 		return greeting;
 	}
 	
-	public Greeting updqteGreeting(long id, String content) throws Exception{
+	public Greeting updateGreeting(Long id, String content) throws Exception{
 		for(Greeting g : data) {
-			if (g.getId() == id)
+			if (g.getId() == id) {
 				g.setContent(content);
 				return g;
+			}
 		}
 		throw new Exception("Invalid Greeting id");
 	}
 	
-	public Response deleteGreeting(long id) throws Exception {
+	public Response deleteGreeting(Long id) throws Exception {
 		for(Greeting g : data) {
-			if (g.getId() == id)
+			if (g.getId() == id) {
 				data.remove(g);
 				return new Response(String.format("Greeting %d deleted", id));
+			}
 		}
 		throw new Exception("Invalid Greeting id");
 	}
