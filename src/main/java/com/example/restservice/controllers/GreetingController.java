@@ -17,34 +17,35 @@ import com.example.restservice.model.Response;
 import com.example.restservice.services.GreetingService;
 
 @RestController
-public class GreetingController implements IGreetingController {
+@RequestMapping("/api/v1.0/greeting")
+public class GreetingController {
 	
 	@Autowired
 	private GreetingService service;
 
 
-	@Override
+	@GetMapping("/")
 	public List<Greeting> getAllGreetings(){
 		return service.getAllGreetings();
 	}
 
-	@Override
-	public Greeting getGreeting( Long id) throws Exception{
+	@GetMapping("/{id}")
+	public Greeting getGreeting(@PathVariable(value = "id") long id) throws Exception{
 		return service.getGreeting(id);
 	}
 	
-	@Override
-	public Greeting createGreeting( Long id,  String content) throws Exception{
+	@PostMapping("/")
+	public Greeting createGreeting(@RequestParam(value = "id") long id, @RequestParam(value = "content") String content) throws Exception{
 		return service.createGreeting(id, content);
 	}
 	
-	@Override
-	public Greeting updateGreeting( Long id, String content) throws Exception{
-		return service.updateGreeting(id, content);
+	@PutMapping("/{id}")
+	public Greeting updqteGreeting(@PathVariable(value = "id") long id, @RequestParam(value = "content") String content) throws Exception{
+		return service.updqteGreeting(id, content);
 	}
 	
-	@Override
-	public Response deleteGreeting( Long id) throws Exception {
+	@DeleteMapping("/{id}")
+	public Response deleteGreeting(@PathVariable(value = "id") long id) throws Exception {
 		return service.deleteGreeting(id);
 	}
 	
