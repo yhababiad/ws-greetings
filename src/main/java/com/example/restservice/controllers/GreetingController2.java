@@ -19,9 +19,9 @@ import com.example.restservice.model.ResultDto;
 import com.example.restservice.services.GreetingService;
 
 
-@RequestMapping("/api/v1.0/greeting")
+@RequestMapping("/api/v2.0/greeting")
 @RestController
-public class GreetingController implements IGreetingController {
+public class GreetingController2 implements IGreetingController {
 	
 	@Autowired
 	private GreetingService service;
@@ -30,13 +30,13 @@ public class GreetingController implements IGreetingController {
 	@Override
 	public ResultDto<Greeting> getAllGreetings(){
 		//return service.getAllGreetings();
-		List<Greeting> data = service.getAllGreetings();
-		//List<Greeting> list=new ArrayList<Greeting>();
+		//List<Greeting> data = new ArrayList<Greeting>();
+		Greeting g = new Greeting(0, "new greeting 2");	
+		List<Greeting> list=new ArrayList<Greeting>();
 		ResultDto<Greeting> dto=new ResultDto<Greeting>();
-		//list.add(g);
-		dto.setGreetings( data);
-		dto.setCount(Long.valueOf( data.size()) );
-		if ( data.size() == 0 ) dto.setMessage("Aucun greeting"); 
+		list.add(g);
+		dto.setGreetings( list);
+		dto.setCount(1L);
 		return dto;
 		
 	}

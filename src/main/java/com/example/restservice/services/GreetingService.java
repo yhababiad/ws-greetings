@@ -35,7 +35,7 @@ public class GreetingService {
 		return greeting;
 	}
 	
-	public Greeting updqteGreeting(long id, String content) throws Exception{
+	public Greeting updateGreeting(long id, String content) throws Exception{
 		for(Greeting g : data) {
 			if (g.getId() == id)
 				g.setContent(content);
